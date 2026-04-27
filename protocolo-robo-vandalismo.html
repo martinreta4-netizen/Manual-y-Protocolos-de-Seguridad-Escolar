@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robo o vandalismo</title>
+
+<style>
+body{
+  margin:0;
+  font-family:system-ui;
+  background:#eef6f7;
+  padding-bottom:90px;
+}
+
+/* HEADER */
+.header{
+  background:white;
+  padding:15px;
+  border-bottom:8px solid #ff8000;
+}
+
+.banner{
+  display:flex;
+  align-items:center;
+}
+
+.label{
+  background:#ff8000;
+  color:white;
+  font-size:1.8rem;
+  font-weight:900;
+  padding:20px;
+  border-radius:0 20px 20px 0;
+}
+
+.titulo{
+  padding-left:15px;
+  font-weight:900;
+  color:#007886;
+}
+
+/* CONTENIDO */
+.contenedor{
+  padding:15px;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:15px;
+  margin-bottom:12px;
+  box-shadow:0 6px 15px rgba(0,0,0,.08);
+}
+
+.card h2{
+  color:#00a896;
+}
+
+/* DECISION */
+.decision{
+  background:#00a896;
+  color:white;
+  padding:18px;
+  border-radius:18px;
+  text-align:center;
+  margin:15px 0;
+}
+
+.btn{
+  display:block;
+  width:100%;
+  padding:15px;
+  margin-top:10px;
+  border:none;
+  border-radius:14px;
+  font-weight:bold;
+  color:white;
+  cursor:pointer;
+}
+
+.extra{background:#d90429;}
+.solo{background:#0077b6;}
+
+/* RUTAS */
+.ruta{
+  display:none;
+  margin-top:10px;
+}
+
+.ruta.activa{
+  display:block;
+}
+
+.paso{
+  background:#e0fbfc;
+  padding:12px;
+  border-radius:12px;
+  margin-bottom:8px;
+  font-weight:700;
+}
+
+/* BARRA */
+.barra{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  display:flex;
+  gap:10px;
+  background:white;
+  padding:10px;
+}
+
+.barra a{
+  flex:1;
+  text-align:center;
+  padding:15px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.menu{background:#eee;}
+.llamar{background:#d90429;color:white;}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="banner">
+    <div class="label">PROTOCOLO</div>
+    <div class="titulo">Robo o Vandalismo a centros educativos</div>
+  </div>
+</div>
+
+<div class="contenedor">
+
+  <!-- DESCRIPCIÓN -->
+  <div class="card">
+    <h2>Descripción</h2>
+    <p>
+      Los centros educativos han sido blanco de hechos delictivos que causan pérdidas y daños para el patrimonio de la comunidad escolar.
+    </p>
+    <p>
+      Al arribar al plantel si se detecta un caso de robo o vandalismo, es importante prestar atención a cualquier señal que indique algún daño o sustracción de objetos. Evite manipular cualquier objeto o espacio; informe a las autoridades correspondientes de manera inmediata a través del 911 y la Coordinación Estatal de Seguridad Escolar.
+    </p>
+    <p>
+      Es importante atender las indicaciones y realizar una denuncia ante la autoridad competente.
+    </p>
+  </div>
+
+  <!-- DECISIÓN -->
+  <div class="decision">
+    <strong>Al llegar al plantel</strong><br>
+    ¿Hay personas extrañas?
+  </div>
+
+  <button class="btn extra" onclick="mostrar('extra')">
+    SÍ hay personas extrañas
+  </button>
+
+  <button class="btn solo" onclick="mostrar('solo')">
+    NO hay personas (lugar solo)
+  </button>
+
+  <!-- RUTA EXTRAÑOS -->
+  <div id="extra" class="ruta">
+    <div class="card">
+      <h2>Ruta con personas extrañas</h2>
+
+      <div class="paso">Resguardarse y llamar inmediatamente al 911</div>
+      <div class="paso">Llamar a Seguridad Escolar</div>
+      <div class="paso">Elaborar acta de hechos para la fiscalía y seguro</div>
+
+    </div>
+  </div>
+
+  <!-- RUTA SOLO -->
+  <div id="solo" class="ruta">
+    <div class="card">
+      <h2>Ruta sin personas</h2>
+
+      <div class="paso">Evitar manipular objetos del lugar</div>
+      <div class="paso">Llamar al 911 y Seguridad Escolar</div>
+      <div class="paso">Elaborar acta de hechos</div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="barra">
+  <a href="index.html" class="menu">☰ Menú</a>
+  <a href="tel:911" class="llamar">🚨 911</a>
+</div>
+
+<script>
+function mostrar(tipo){
+  document.getElementById("extra").classList.remove("activa");
+  document.getElementById("solo").classList.remove("activa");
+
+  document.getElementById(tipo).classList.add("activa");
+}
+</script>
+
+</body>
+</html>

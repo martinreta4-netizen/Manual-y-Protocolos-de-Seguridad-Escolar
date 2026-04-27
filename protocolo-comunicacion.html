@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comunicación en emergencias</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:system-ui;
+  background:#f5efe6;
+  padding-bottom:90px;
+}
+
+/* HEADER */
+.header{
+  background:white;
+  padding:15px;
+  border-bottom:8px solid #e59866;
+}
+
+.banner{
+  display:flex;
+  align-items:center;
+}
+
+.label{
+  background:#ff8000;
+  color:white;
+  font-size:1.6rem;
+  font-weight:900;
+  padding:18px;
+  border-radius:0 20px 20px 0;
+}
+
+.titulo{
+  padding-left:12px;
+  font-weight:900;
+  color:#007886;
+}
+
+/* CONTENIDO */
+.contenedor{
+  padding:15px;
+}
+
+/* BLOQUES */
+.paso{
+  background:#ff3b30;
+  color:white;
+  padding:16px;
+  border-radius:14px;
+  margin-bottom:10px;
+  text-align:center;
+  font-weight:900;
+  box-shadow:0 5px 12px rgba(0,0,0,.2);
+}
+
+/* LINEAS VISUALES */
+.flujo{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* BARRA */
+.barra{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  display:flex;
+  gap:10px;
+  background:white;
+  padding:10px;
+}
+
+.barra a{
+  flex:1;
+  text-align:center;
+  padding:15px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.menu{background:#eee;}
+.llamar{background:#d90429;color:white;}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="banner">
+    <div class="label">PROTOCOLO</div>
+    <div class="titulo">Información, comunicación y respuesta</div>
+  </div>
+</div>
+
+<div class="contenedor">
+
+  <div class="flujo">
+
+    <div class="paso">ESCUELA / INCIDENTE</div>
+
+    <div class="paso">INSPECTOR Y/O SUPERVISOR<br>JEFE DE SECTOR</div>
+
+    <div class="paso">DIRECTOR DE NIVEL</div>
+
+    <div class="paso">COORDINACIÓN ESTATAL DE SEGURIDAD ESCOLAR</div>
+
+    <div class="paso">SECRETARÍA DE EDUCACIÓN<br>SUBSECRETARÍA DE COMUNICACIÓN</div>
+
+  </div>
+
+</div>
+
+<div class="barra">
+  <a href="index.html" class="menu">☰ Menú</a>
+  <a href="tel:911" class="llamar">🚨 911</a>
+</div>
+
+</body>
+</html>

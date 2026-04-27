@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Descarga eléctrica</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:#fff8e1;
+  color:#1f2937;
+  padding-bottom:90px;
+}
+
+.header{
+  background:white;
+  padding:15px;
+  border-bottom:8px solid #ffcc00;
+}
+
+.banner{
+  display:flex;
+  align-items:center;
+}
+
+.label{
+  background:#ff8000;
+  color:white;
+  font-size:1.7rem;
+  font-weight:1000;
+  padding:20px;
+  border-radius:0 20px 20px 0;
+}
+
+.titulo{
+  padding-left:15px;
+  font-weight:900;
+  color:#007886;
+  font-size:1.1rem;
+}
+
+.contenedor{
+  padding:15px;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:15px;
+  margin-bottom:12px;
+  box-shadow:0 6px 15px rgba(0,0,0,.08);
+}
+
+.card h2{
+  margin:0 0 10px;
+  color:#ffb703;
+}
+
+.card p,
+.card li{
+  font-size:.95rem;
+  line-height:1.55;
+}
+
+.paso{
+  background:#023e8a;
+  color:white;
+  padding:14px;
+  border-radius:14px;
+  margin-bottom:8px;
+  font-weight:800;
+  text-align:center;
+  box-shadow:0 5px 12px rgba(0,0,0,.15);
+}
+
+/* ALERTA IMPORTANTE */
+.alerta{
+  background:#fff3cd;
+  border:2px solid #ffcc00;
+  padding:12px;
+  border-radius:14px;
+  margin-bottom:10px;
+  font-weight:700;
+}
+
+.barra{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  display:flex;
+  gap:10px;
+  background:white;
+  padding:10px;
+  box-shadow:0 -6px 20px rgba(0,0,0,.18);
+}
+
+.barra a{
+  flex:1;
+  text-align:center;
+  padding:15px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:1000;
+}
+
+.menu{
+  background:#eef6f7;
+  color:#007886;
+}
+
+.llamar{
+  background:#d90429;
+  color:white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="banner">
+    <div class="label">PROTOCOLO</div>
+    <div class="titulo">En caso de descarga eléctrica</div>
+  </div>
+</div>
+
+<div class="contenedor">
+
+  <!-- DESCRIPCIÓN -->
+  <div class="card">
+    <h2>Descripción</h2>
+    <p>
+      Un voltaje tan bajo como 50 volts aplicado entre dos partes del cuerpo humano puede ocasionar lesiones.
+    </p>
+    <p><strong>Consecuencias graves:</strong></p>
+    <ul>
+      <li>Detener los latidos del corazón.</li>
+      <li>Parar la respiración.</li>
+      <li>Crear espasmos entre los músculos.</li>
+    </ul>
+    <p>
+      Los efectos varían según el voltaje, el tiempo de exposición y las condiciones de la persona.
+    </p>
+  </div>
+
+  <!-- CONSIDERACIONES -->
+  <div class="card">
+    <h2>Consideraciones</h2>
+    <ul>
+      <li>Evitar el uso de conexiones múltiples y extensiones.</li>
+      <li>No usar cables descubiertos ni registros sin tapa.</li>
+      <li>Controlar el acceso a subestaciones.</li>
+      <li>No tocar a la persona con manos descubiertas.</li>
+      <li>Cortar el suministro eléctrico.</li>
+      <li>No mover a la persona (salvo peligro inminente).</li>
+      <li>Solicitar ayuda médica inmediata.</li>
+    </ul>
+  </div>
+
+  <!-- ALERTA -->
+  <div class="alerta">
+    ⚠️ Nunca toques directamente a una persona que está en contacto con corriente eléctrica.
+  </div>
+
+  <!-- PROTOCOLO -->
+  <div class="card">
+    <h2>Protocolo</h2>
+
+    <div class="paso">DESCARGA ELÉCTRICA</div>
+    <div class="paso">GUARDAR LA CALMA</div>
+    <div class="paso">COMUNICARSE CON CONTACTOS DE EMERGENCIA Y LLAMAR AL 911</div>
+    <div class="paso">NOTIFICAR A LA COORDINACIÓN ESTATAL DE SEGURIDAD ESCOLAR</div>
+
+  </div>
+
+</div>
+
+<div class="barra">
+  <a href="index.html" class="menu">☰ Menú</a>
+  <a href="tel:911" class="llamar">🚨 911</a>
+</div>
+
+</body>
+</html>

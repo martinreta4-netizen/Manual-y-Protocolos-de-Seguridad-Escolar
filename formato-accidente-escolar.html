@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atención médica por accidentes escolares</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#eef6f7;
+  color:#111;
+  padding-bottom:90px;
+}
+
+.formulario{
+  max-width:900px;
+  margin:auto;
+  padding:15px;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:15px;
+  margin-bottom:12px;
+  box-shadow:0 6px 15px rgba(0,0,0,.08);
+}
+
+.card h2{
+  margin-top:0;
+  color:#007886;
+}
+
+label{
+  display:block;
+  font-weight:bold;
+  margin-top:10px;
+}
+
+input, textarea{
+  width:100%;
+  padding:10px;
+  border:1px solid #bbb;
+  border-radius:10px;
+  margin-top:4px;
+  font-size:1rem;
+}
+
+textarea{
+  min-height:95px;
+  resize:vertical;
+}
+
+button{
+  width:100%;
+  border:none;
+  border-radius:14px;
+  padding:15px;
+  margin-top:10px;
+  font-weight:bold;
+  font-size:1rem;
+  cursor:pointer;
+}
+
+.guardar{background:#007886;color:white}
+.generar{background:#ff8000;color:white}
+.limpiar{background:#777;color:white}
+.imprimir{background:#0b7a36;color:white}
+
+.preview{
+  max-height:90px;
+  display:block;
+  margin:10px auto;
+}
+
+/* DOCUMENTO */
+.documento{
+  display:none;
+  background:white;
+  width:8.5in;
+  min-height:11in;
+  margin:20px auto;
+  padding:28px 42px;
+  font-size:12.5px;
+  line-height:1.35;
+}
+
+.membrete{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  margin-bottom:14px;
+}
+
+.logo-izq{
+  height:58px;
+  object-fit:contain;
+  justify-self:start;
+}
+
+.logo-der{
+  height:62px;
+  object-fit:contain;
+  justify-self:end;
+}
+
+.escudo-centro{
+  height:65px;
+  max-width:80px;
+  object-fit:contain;
+  justify-self:center;
+}
+
+.titulo-doc{
+  text-align:center;
+  font-weight:bold;
+  font-size:16px;
+  margin:16px 0 18px;
+}
+
+.grid-datos{
+  display:grid;
+  grid-template-columns:1.35fr .85fr;
+  gap:24px;
+  margin-bottom:14px;
+}
+
+.fila{
+  margin:6px 0;
+}
+
+.etiqueta{
+  font-weight:bold;
+}
+
+.linea{
+  display:inline-block;
+  border-bottom:1px solid #000;
+  min-height:17px;
+  padding:0 4px;
+  vertical-align:bottom;
+}
+
+.escuela-linea{width:78%}
+.cct-linea{width:72%}
+.direccion-linea{width:76%}
+.tel-linea{width:70%}
+.correo-linea{width:65%}
+.oficio-linea{width:70%}
+.turno-linea{width:70%}
+.fecha-linea{width:70%}
+
+.destinatario{
+  margin-top:12px;
+  margin-bottom:12px;
+}
+
+.hechos{
+  min-height:95px;
+  border-bottom:1px solid #000;
+  white-space:pre-wrap;
+  padding:4px;
+  margin-top:4px;
+}
+
+.parrafo{
+  text-align:justify;
+  margin:13px 0;
+}
+
+.datos-alumno{
+  margin-top:8px;
+}
+
+.alumno-linea{width:72%}
+.edad-linea{width:24%}
+.sangre-linea{width:28%}
+.alergias-linea{width:42%}
+.padre-linea{width:64%}
+.telefono-linea{width:34%}
+
+.atentamente{
+  margin-top:22px;
+  font-weight:bold;
+}
+
+.sello{
+  float:right;
+  margin-right:90px;
+  font-weight:normal;
+}
+
+.firma{
+  margin-top:55px;
+  text-align:center;
+  font-size:12.5px;
+}
+
+.pie{
+  margin-top:24px;
+  font-size:10px;
+  color:#555;
+  text-align:center;
+  border-top:1px solid #ddd;
+  padding-top:7px;
+}
+
+.barra{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  display:flex;
+  gap:10px;
+  background:white;
+  padding:10px;
+  box-shadow:0 -6px 20px rgba(0,0,0,.18);
+}
+
+.barra a{
+  flex:1;
+  text-align:center;
+  padding:15px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:bold;
+  background:#eee;
+  color:#333;
+}
+
+@media print{
+  body{
+    background:white;
+    padding:0;
+  }
+
+  .formulario,
+  .barra,
+  .acciones{
+    display:none!important;
+  }
+
+  .documento{
+    display:block!important;
+    width:100%;
+    min-height:auto;
+    margin:0;
+    padding:18px 32px;
+    font-size:12px;
+  }
+
+  .logo-izq{height:52px}
+  .logo-der{height:56px}
+  .escudo-centro{height:58px}
+}
+</style>
+</head>
+
+<body>
+
+<section class="formulario">
+
+  <div class="card">
+    <h2>🏫 Datos de la escuela</h2>
+
+    <label>Nombre de la escuela:</label>
+    <input id="escuela">
+
+    <label>C.C.T.:</label>
+    <input id="cct">
+
+    <label>Dirección:</label>
+    <input id="direccion">
+
+    <label>Teléfono:</label>
+    <input id="telefonoEscuela">
+
+    <label>Correo Electrónico:</label>
+    <input id="correoEscuela">
+
+    <label>Turno:</label>
+    <input id="turno">
+
+    <label>Nombre del director(a):</label>
+    <input id="director">
+
+    <label>Escudo de la escuela:</label>
+    <input type="file" accept="image/*" onchange="guardarEscudo(event)">
+    <img id="previewEscudo" class="preview">
+
+    <button class="guardar" onclick="guardarDatosEscuela()">💾 Guardar datos de la escuela</button>
+    <button class="limpiar" onclick="borrarDatosEscuela()">🧹 Borrar datos guardados</button>
+  </div>
+
+  <div class="card">
+    <h2>📄 Datos del accidente</h2>
+
+    <label>Oficio:</label>
+    <input id="oficio" value="SE_2324_04">
+
+    <label>Fecha:</label>
+    <input id="fecha">
+
+    <label>Hechos:</label>
+    <textarea id="hechos"></textarea>
+
+    <label>Nombre del alumno:</label>
+    <input id="alumno">
+
+    <label>Edad:</label>
+    <input id="edad">
+
+    <label>Tipo de Sangre:</label>
+    <input id="sangre">
+
+    <label>Alergias:</label>
+    <input id="alergias">
+
+    <label>Nombre del padre de familia:</label>
+    <input id="padre">
+
+    <label>Teléfonos:</label>
+    <input id="telefonos">
+
+    <button class="generar" onclick="generarFormato()">Generar formato</button>
+  </div>
+
+</section>
+
+<section class="documento" id="documento">
+
+  <div class="membrete">
+    <img src="logo_educacion.png" class="logo-izq" alt="Educación Nuevo León">
+    <img id="escudoDoc" class="escudo-centro" alt="Escudo de la escuela">
+    <img src="logo_nl.png" class="logo-der" alt="Gobierno de Nuevo León">
+  </div>
+
+  <div class="titulo-doc">Atención médica por accidentes escolares</div>
+
+  <div class="grid-datos">
+
+    <div>
+      <div class="fila">Escuela: <span class="linea escuela-linea" id="dEscuela"></span></div>
+      <div class="fila">C.C.T.: <span class="linea cct-linea" id="dCct"></span></div>
+      <div class="fila">Dirección: <span class="linea direccion-linea" id="dDireccion"></span></div>
+      <div class="fila">Teléfono: <span class="linea tel-linea" id="dTelefonoEscuela"></span></div>
+      <div class="fila">Correo Electrónico: <span class="linea correo-linea" id="dCorreoEscuela"></span></div>
+    </div>
+
+    <div>
+      <div class="fila">Oficio: <span class="linea oficio-linea" id="dOficio"></span></div>
+      <div class="fila">Asunto: <strong>SEGURO ESCOLAR</strong></div>
+      <div class="fila">Turno: <span class="linea turno-linea" id="dTurno"></span></div>
+      <div class="fila">Fecha: <span class="linea fecha-linea" id="dFecha"></span></div>
+    </div>
+
+  </div>
+
+  <div class="destinatario">
+    Servicios de Salud de Nuevo León O.P.D.<br>
+    Presente. -
+  </div>
+
+  <div><strong>Hechos:</strong></div>
+  <div class="hechos" id="dHechos"></div>
+
+  <p class="parrafo">
+    Los gastos generados por la atención médica serán cubiertos por parte del Gobierno del Estado de Nuevo León,
+    hasta por un monto de $15,000.00, el gasto adicional será cubierto por los padres de familia o tutor del alumno(a).
+  </p>
+
+  <p><strong>Datos completos del alumno</strong></p>
+
+  <div class="datos-alumno">
+    <div class="fila">Nombre del alumno: <span class="linea alumno-linea" id="dAlumno"></span></div>
+    <div class="fila">Edad: <span class="linea edad-linea" id="dEdad"></span></div>
+    <div class="fila">Tipo de Sangre: <span class="linea sangre-linea" id="dSangre"></span></div>
+    <div class="fila">Alergias: <span class="linea alergias-linea" id="dAlergias"></span></div>
+    <div class="fila">Nombre del padre de familia: <span class="linea padre-linea" id="dPadre"></span></div>
+    <div class="fila">Teléfonos: <span class="linea telefono-linea" id="dTelefonos"></span></div>
+  </div>
+
+  <p class="parrafo">
+    El alumno deberá ser presentado por el padre, madre o tutor, junto con el presente oficio dentro de los
+    3-tres días hábiles a la fecha en que ocurre el accidente, para la atención médica.
+  </p>
+
+  <p>
+    Sin más por el momento y agradeciendo de antemano su atención queda de usted:
+  </p>
+
+  <div class="atentamente">
+    ATENTAMENTE
+    <span class="sello">Sello</span>
+  </div>
+
+  <div class="firma">
+    _______________________________________<br>
+    Director(a) de la Escuela<br>
+    <span id="dDirector"></span><br>
+    Nombre y Firma
+  </div>
+
+  <div class="pie">
+    Formato generado para atención médica por accidentes escolares.
+  </div>
+
+</section>
+
+<section class="formulario acciones" id="acciones" style="display:none;">
+  <div class="card">
+    <button class="imprimir" onclick="window.print()">🖨️ Imprimir formato</button>
+  </div>
+</section>
+
+<nav class="barra">
+  <a href="protocolo-accidente-lesion.html">⬅ Protocolo</a>
+  <a href="index.html">☰ Menú</a>
+</nav>
+
+<script>
+const camposEscuela = [
+  "escuela","cct","direccion","telefonoEscuela",
+  "correoEscuela","turno","director"
+];
+
+function guardarDatosEscuela(){
+  camposEscuela.forEach(id=>{
+    localStorage.setItem("seguro_"+id, document.getElementById(id).value);
+  });
+  alert("Datos de la escuela guardados.");
+}
+
+function cargarDatosEscuela(){
+  camposEscuela.forEach(id=>{
+    const valor = localStorage.getItem("seguro_"+id);
+    if(valor) document.getElementById(id).value = valor;
+  });
+
+  const escudo = localStorage.getItem("seguro_escudo");
+  if(escudo){
+    document.getElementById("previewEscudo").src = escudo;
+    document.getElementById("escudoDoc").src = escudo;
+  }
+}
+
+function borrarDatosEscuela(){
+  if(confirm("¿Deseas borrar los datos guardados de la escuela?")){
+    camposEscuela.forEach(id=>localStorage.removeItem("seguro_"+id));
+    localStorage.removeItem("seguro_escudo");
+    location.reload();
+  }
+}
+
+function guardarEscudo(e){
+  const file = e.target.files[0];
+  if(!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function(evt){
+    localStorage.setItem("seguro_escudo", evt.target.result);
+    document.getElementById("previewEscudo").src = evt.target.result;
+    document.getElementById("escudoDoc").src = evt.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function generarFormato(){
+  guardarDatosEscuela();
+
+  document.getElementById("dEscuela").textContent = document.getElementById("escuela").value;
+  document.getElementById("dCct").textContent = document.getElementById("cct").value;
+  document.getElementById("dDireccion").textContent = document.getElementById("direccion").value;
+  document.getElementById("dTelefonoEscuela").textContent = document.getElementById("telefonoEscuela").value;
+  document.getElementById("dCorreoEscuela").textContent = document.getElementById("correoEscuela").value;
+  document.getElementById("dTurno").textContent = document.getElementById("turno").value;
+  document.getElementById("dDirector").textContent = document.getElementById("director").value;
+
+  document.getElementById("dOficio").textContent = document.getElementById("oficio").value;
+  document.getElementById("dFecha").textContent = document.getElementById("fecha").value;
+  document.getElementById("dHechos").textContent = document.getElementById("hechos").value;
+  document.getElementById("dAlumno").textContent = document.getElementById("alumno").value;
+  document.getElementById("dEdad").textContent = document.getElementById("edad").value;
+  document.getElementById("dSangre").textContent = document.getElementById("sangre").value;
+  document.getElementById("dAlergias").textContent = document.getElementById("alergias").value;
+  document.getElementById("dPadre").textContent = document.getElementById("padre").value;
+  document.getElementById("dTelefonos").textContent = document.getElementById("telefonos").value;
+
+  const escudo = localStorage.getItem("seguro_escudo");
+  if(escudo) document.getElementById("escudoDoc").src = escudo;
+
+  document.getElementById("documento").style.display = "block";
+  document.getElementById("acciones").style.display = "block";
+  document.getElementById("documento").scrollIntoView({behavior:"smooth"});
+}
+
+cargarDatosEscuela();
+</script>
+
+</body>
+</html>

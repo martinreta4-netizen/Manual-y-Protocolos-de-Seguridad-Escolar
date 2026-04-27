@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protocolo - Accidente o lesión</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:#fff1f1;
+  color:#1f2937;
+  padding-bottom:90px;
+}
+
+.header{
+  background:white;
+  padding:18px;
+  border-bottom:8px solid #fb9a9a;
+}
+
+.protocolo-banner{
+  display:flex;
+  align-items:center;
+  min-height:92px;
+  background:white;
+  overflow:hidden;
+}
+
+.protocolo-label{
+  background:#ff8000;
+  color:white;
+  font-size:2rem;
+  font-weight:1000;
+  padding:26px 28px;
+  border-radius:0 28px 28px 0;
+  letter-spacing:.5px;
+}
+
+.protocolo-title{
+  color:#007886;
+  font-weight:900;
+  font-size:1.25rem;
+  line-height:1.05;
+  padding:0 18px;
+}
+
+.contenedor{
+  padding:16px;
+  max-width:900px;
+  margin:auto;
+}
+
+.card{
+  background:white;
+  border-radius:22px;
+  padding:18px;
+  margin-bottom:14px;
+  box-shadow:0 8px 22px rgba(0,0,0,.08);
+  border:1px solid #ffd1d1;
+}
+
+.card h2{
+  margin:0 0 10px;
+  color:#b7162a;
+  font-size:1.2rem;
+}
+
+.card p, .card li{
+  font-size:.95rem;
+  line-height:1.55;
+}
+
+.decision{
+  background:#b7162a;
+  color:white;
+  text-align:center;
+  border-radius:22px;
+  padding:22px 16px;
+  margin:18px 0;
+  box-shadow:0 10px 24px rgba(183,22,42,.25);
+}
+
+.decision h2{
+  color:white;
+  margin:0 0 8px;
+}
+
+.opciones{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+}
+
+.btn-opcion{
+  border:none;
+  border-radius:18px;
+  padding:18px;
+  font-size:1rem;
+  font-weight:900;
+  cursor:pointer;
+  color:white;
+}
+
+.leve{background:#008c7a}
+.grave{background:#d90429}
+
+.ruta{
+  display:none;
+  border-radius:22px;
+  padding:16px;
+  margin-top:14px;
+}
+
+.ruta.activa{display:block}
+
+.ruta-leve{
+  background:#e9fff8;
+  border:2px solid #008c7a;
+}
+
+.ruta-grave{
+  background:#fff0f0;
+  border:2px solid #d90429;
+}
+
+.paso{
+  background:white;
+  border-radius:16px;
+  padding:15px;
+  margin:10px 0;
+  font-weight:900;
+  display:flex;
+  gap:10px;
+  align-items:center;
+  box-shadow:0 5px 14px rgba(0,0,0,.08);
+}
+
+.num{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:#ff8000;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+
+.barra{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:white;
+  padding:10px;
+  display:flex;
+  gap:10px;
+  box-shadow:0 -8px 24px rgba(0,0,0,.16);
+}
+
+.barra a{
+  flex:1;
+  text-align:center;
+  text-decoration:none;
+  padding:15px 10px;
+  border-radius:18px;
+  font-weight:1000;
+}
+
+.menu{background:#eef6f7;color:#007886}
+.llamar{background:#d90429;color:white}
+
+@media(max-width:520px){
+  .protocolo-label{
+    font-size:1.35rem;
+    padding:22px 18px;
+  }
+  .protocolo-title{
+    font-size:1rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="protocolo-banner">
+    <div class="protocolo-label">PROTOCOLO</div>
+    <div class="protocolo-title">En caso de accidente<br>o lesión en la escuela</div>
+  </div>
+</header>
+
+<main class="contenedor">
+
+  <section class="card">
+    <h2>Descripción</h2>
+    <p>En su gran mayoría, los accidentes se pueden evitar al establecer reglas de seguridad, definir campañas de prevención de accidentes y realizar supervisiones por parte del personal docente y administrativo en las áreas de mayor riesgo. Con ello podremos lograr minimizar los accidentes. Sin embargo, aún con los cuidados que se puedan seguir, existe un pequeño porcentaje de sucesos que podrían provocar un traumatismo en menores o en el mismo personal docente. Por esto es importante que por lo menos exista una persona capacitada en primeros auxilios en cada plantel escolar y que la escuela cuente con el botiquín básico escolar.</p>
+  </section>
+
+  <section class="card">
+    <h2>Consideraciones</h2>
+    <ul>
+      <li>Tenga especial atención en menores con problemas crónicos o cuidados especiales (alergias, afecciones cardíacas, etc.). Los maestros, maestras y directivos deben conocer estos casos particulares.</li>
+      <li>Cuente con los números de emergencia de la localidad, además del 911. Conocer el lugar de atención de urgencias más próximo.</li>
+      <li>Espere siempre al servicio de ambulancias, a menos que se considere pertinente el traslado de la persona al centro de urgencias por indicaciones de ellos mismos.</li>
+      <li>Tenga siempre bien abastecido el botiquín escolar.</li>
+      <li>El archivo de la escuela deberá contar con la ficha Evolutiva actualizada de cada menor, así como tres números telefónicos de personas que sirván de contacto para avisar en caso de algún accidente.</li>
+    </ul>
+  </section>
+
+  <section class="decision">
+    <h2>ACCIDENTE, LESIÓN</h2>
+    <p>CLASIFIQUE EL ESTADO DE LA VÍCTIMA</p>
+    <p><strong>¿ES UNA LESIÓN?</strong></p>
+  </section>
+
+  <section class="card">
+    <h2>Selecciona el tipo de lesión</h2>
+
+    <div class="opciones">
+      <button class="btn-opcion leve" onclick="mostrarRuta('leve')">¿ES UNA LESIÓN LEVE?</button>
+      <button class="btn-opcion grave" onclick="mostrarRuta('grave')">¿ES UNA LESIÓN GRAVE?</button>
+    </div>
+
+    <div id="rutaLeve" class="ruta ruta-leve">
+      <h2>Ruta: lesión leve</h2>
+      <div class="paso"><span class="num">1</span>LLAMAR A LA FAMILIA</div>
+      <div class="paso"><span class="num">2</span>PRIMEROS AUXILIOS</div>
+      <div class="paso"><span class="num">3</span>REGRESO A CLASES</div>
+    </div>
+
+    <div id="rutaGrave" class="ruta ruta-grave">
+      <h2>Ruta: lesión grave</h2>
+      <div class="paso"><span class="num">1</span>LLAMAR 911 Y A LA FAMILIA</div>
+      <div class="paso"><span class="num">2</span>LLAMAR A SEGURIDAD ESCOLAR</div>
+    </div>
+  </section>
+
+</main>
+
+<nav class="barra">
+  <a class="menu" href="index.html">☰ Menú</a>
+  <a class="llamar" href="tel:911">🚨 Llamar 911</a>
+</nav>
+
+<script>
+function mostrarRuta(tipo){
+  document.getElementById("rutaLeve").classList.remove("activa");
+  document.getElementById("rutaGrave").classList.remove("activa");
+
+  if(tipo === "leve"){
+    document.getElementById("rutaLeve").classList.add("activa");
+  }
+
+  if(tipo === "grave"){
+    document.getElementById("rutaGrave").classList.add("activa");
+  }
+}
+</script>
+
+</body>
+</html>

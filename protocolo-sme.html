@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servicio Médico de Emergencia</title>
+
+<style>
+body{
+  margin:0;
+  font-family:system-ui;
+  background:#fff6eb;
+  padding-bottom:90px;
+}
+
+/* HEADER */
+.header{
+  background:white;
+  padding:15px;
+  border-bottom:8px solid #ff8000;
+}
+
+.banner{
+  display:flex;
+  align-items:center;
+}
+
+.label{
+  background:#ff8000;
+  color:white;
+  font-size:1.8rem;
+  font-weight:900;
+  padding:20px;
+  border-radius:0 20px 20px 0;
+}
+
+.titulo{
+  padding-left:15px;
+  font-weight:900;
+  color:#007886;
+  font-size:1.1rem;
+}
+
+/* CONTENIDO */
+.contenedor{
+  padding:15px;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:15px;
+  margin-bottom:12px;
+  box-shadow:0 6px 15px rgba(0,0,0,.08);
+}
+
+.card h2{
+  color:#e63946;
+  margin-bottom:8px;
+}
+
+/* LISTAS */
+li{
+  margin-bottom:8px;
+}
+
+/* ICONOS */
+.iconos{
+  width:80%;
+  max-width:320px;
+  display:block;
+  margin:10px auto;
+  border-radius:12px;
+}
+
+/* PASOS */
+.paso{
+  background:#ffe5d9;
+  padding:12px;
+  border-radius:12px;
+  margin-bottom:8px;
+  font-weight:700;
+}
+
+/* BOTONES */
+.barra{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  display:flex;
+  gap:10px;
+  background:white;
+  padding:10px;
+  box-shadow:0 -6px 20px rgba(0,0,0,.2);
+}
+
+.barra a{
+  flex:1;
+  text-align:center;
+  padding:15px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.menu{
+  background:#eee;
+  color:#333;
+}
+
+.llamar{
+  background:#d90429;
+  color:white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="banner">
+    <div class="label">PROTOCOLO</div>
+    <div class="titulo">
+      Para la activación del Servicio Médico de Emergencia (S.M.E.)
+    </div>
+  </div>
+</div>
+
+<div class="contenedor">
+
+  <!-- DESCRIPCIÓN -->
+  <div class="card">
+    <h2>Descripción</h2>
+    <p>
+      La activación del Servicio Médico de Emergencias (S.M.E.) en un accidente es parte importante del cuidado de la víctima, la pronta atención puede marcar la diferencia entre:
+    </p>
+    <ul>
+      <li>La vida o la muerte.</li>
+      <li>La invalidez temporal o la invalidez permanente.</li>
+      <li>Una recuperación rápida o una larga hospitalización.</li>
+    </ul>
+    <p>
+      Es muy importante activar el S.M.E. al detectar una situación que debe ser atendida en ambulancia, hacerlo de forma oportuna logrará salvaguardar la vida de las personas, disminuyendo el tiempo de atención inmediata para la víctima y reduciendo un desenlace mortal.
+    </p>
+  </div>
+
+  <!-- CONSIDERACIONES -->
+  <div class="card">
+    <h2>Consideraciones</h2>
+    <ul>
+      <li>Situación: ¿cómo se encuentran las personas?</li>
+      <li>Escena: ¿dónde se encuentra ubicado?</li>
+      <li>Seguridad: ¿existen riesgos para el auxiliador?</li>
+    </ul>
+
+    <p><strong>Para evaluar:</strong></p>
+    <ul>
+      <li>¿Qué pasó?</li>
+      <li>¿Existen riesgos?</li>
+      <li>¿Cuántos lesionados hay?</li>
+      <li>¿En qué estado se encuentran las víctimas?</li>
+      <li>¿Cuál es la ubicación exacta del hecho?</li>
+    </ul>
+  </div>
+
+  <!-- ICONOS -->
+  <div class="card">
+    <h2>Referencia visual</h2>
+    <img src="sme_iconos.png" class="iconos">
+  </div>
+
+  <!-- PROTOCOLO -->
+  <div class="card">
+    <h2>Protocolo</h2>
+
+    <div class="paso">IDENTIFICAR LA EMERGENCIA</div>
+    <div class="paso">LLAMAR A LA FAMILIA Y AL 911</div>
+
+    <div class="paso">
+      PROPORCIONAR LOS SIGUIENTES DATOS:
+      <ul>
+        <li>Nombre de quien llama</li>
+        <li>Número de contacto</li>
+        <li>Ubicación exacta</li>
+        <li>Relato de los hechos</li>
+        <li>Número de personas lesionadas</li>
+        <li>Datos de las víctimas</li>
+        <li>Si existe algún riesgo o peligro</li>
+      </ul>
+    </div>
+
+    <div class="paso">
+      ATENDER Y OBSERVAR A LA VÍCTIMA Y ESPERAR AL SERVICIO MÉDICO
+    </div>
+
+    <div class="paso">
+      REPORTAR SITUACIÓN A SEGURIDAD ESCOLAR
+    </div>
+
+  </div>
+
+</div>
+
+<div class="barra">
+  <a href="index.html" class="menu">☰ Menú</a>
+  <a href="tel:911" class="llamar">🚨 911</a>
+</div>
+
+</body>
+</html>

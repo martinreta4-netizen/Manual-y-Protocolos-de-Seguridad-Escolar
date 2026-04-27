@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sismos</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:system-ui;
+  background:#fff4e6;
+  padding-bottom:90px;
+}
+
+/* HEADER */
+.header{
+  background:white;
+  padding:15px;
+  border-bottom:8px solid #e76f51;
+}
+
+.banner{
+  display:flex;
+  align-items:center;
+}
+
+.label{
+  background:#ff8000;
+  color:white;
+  font-size:1.6rem;
+  font-weight:900;
+  padding:18px;
+  border-radius:0 20px 20px 0;
+}
+
+.titulo{
+  padding-left:12px;
+  font-weight:900;
+  color:#007886;
+}
+
+/* CONTENIDO */
+.contenedor{
+  padding:15px;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:15px;
+  margin-bottom:12px;
+  box-shadow:0 6px 15px rgba(0,0,0,.08);
+}
+
+.card h2{
+  color:#d35400;
+}
+
+/* ALERTA */
+.alerta{
+  background:#ffe5d9;
+  border-left:6px solid #e76f51;
+  padding:12px;
+  border-radius:12px;
+  margin-bottom:10px;
+  font-weight:700;
+}
+
+/* PASOS */
+.paso{
+  background:#d35400;
+  color:white;
+  padding:14px;
+  border-radius:14px;
+  margin-bottom:8px;
+  font-weight:800;
+  text-align:center;
+  box-shadow:0 5px 12px rgba(0,0,0,.15);
+}
+
+/* ETAPAS */
+.etapa{
+  margin-top:10px;
+  font-weight:900;
+  color:#e76f51;
+}
+
+/* BARRA */
+.barra{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  display:flex;
+  gap:10px;
+  background:white;
+  padding:10px;
+}
+
+.barra a{
+  flex:1;
+  text-align:center;
+  padding:15px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.menu{background:#eee;}
+.llamar{background:#d90429;color:white;}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="banner">
+    <div class="label">PROTOCOLO</div>
+    <div class="titulo">Sismos</div>
+  </div>
+</div>
+
+<div class="contenedor">
+
+  <!-- DESCRIPCIÓN -->
+  <div class="card">
+    <h2>Descripción</h2>
+    <p>
+      Un sismo es un fenómeno que se produce por un rompimiento repentino en la corteza terrestre, generando vibraciones que se perciben como sacudidas o balanceos.
+    </p>
+    <p>
+      Aunque en Nuevo León no son frecuentes, pueden generar daños, por lo que es importante contar con medidas de prevención.
+    </p>
+  </div>
+
+  <!-- CONSIDERACIONES -->
+  <div class="card">
+    <h2>Consideraciones</h2>
+
+    <div class="etapa">Antes del sismo:</div>
+    <ul>
+      <li>Detectar y reducir riesgos.</li>
+      <li>Fijar objetos que puedan caer.</li>
+      <li>Mantener rutas de evacuación libres.</li>
+      <li>Identificar zonas seguras.</li>
+    </ul>
+
+    <div class="etapa">Durante el sismo:</div>
+    <ul>
+      <li>Alejarse de objetos que puedan caer.</li>
+      <li>Dirigirse a punto de reunión o zona segura.</li>
+      <li>Cubrirse la cabeza y colocarse en posición segura.</li>
+    </ul>
+
+    <div class="etapa">Después del sismo:</div>
+    <ul>
+      <li>Evaluar daños.</li>
+      <li>No volver si hay daños estructurales.</li>
+      <li>Prepararse para réplicas.</li>
+    </ul>
+  </div>
+
+  <!-- ALERTA -->
+  <div class="alerta">
+    ⚠️ Mantén la calma, aléjate de objetos que puedan caer y protege tu cabeza.
+  </div>
+
+  <!-- PROTOCOLO -->
+  <div class="card">
+    <h2>Protocolo</h2>
+
+    <div class="paso">SISMO</div>
+    <div class="paso">ALEJARSE DE OBJETOS QUE PUEDAN CAER</div>
+    <div class="paso">DIRIGIRSE A PUNTO DE REUNIÓN O CUBRIRSE</div>
+    <div class="paso">EVALUAR DAÑOS Y REPORTAR A AUTORIDADES</div>
+
+  </div>
+
+</div>
+
+<div class="barra">
+  <a href="index.html" class="menu">☰ Menú</a>
+  <a href="tel:911" class="llamar">🚨 911</a>
+</div>
+
+</body>
+</html>

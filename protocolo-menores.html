@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menores fuera de horario</title>
+
+<style>
+body{
+  margin:0;
+  font-family:system-ui;
+  background:#fff6e5;
+  padding-bottom:90px;
+}
+
+/* HEADER */
+.header{
+  background:white;
+  padding:15px;
+  border-bottom:8px solid #ff8000;
+}
+
+.banner{
+  display:flex;
+  align-items:center;
+}
+
+.label{
+  background:#ff8000;
+  color:white;
+  font-size:1.6rem;
+  font-weight:900;
+  padding:18px;
+  border-radius:0 20px 20px 0;
+}
+
+.titulo{
+  padding-left:12px;
+  font-weight:900;
+  color:#007886;
+}
+
+/* CONTENIDO */
+.contenedor{
+  padding:15px;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:15px;
+  margin-bottom:12px;
+  box-shadow:0 6px 15px rgba(0,0,0,.08);
+}
+
+.card h2{
+  color:#f77f00;
+}
+
+/* DECISION */
+.decision{
+  background:#f77f00;
+  color:white;
+  padding:18px;
+  border-radius:18px;
+  text-align:center;
+  margin:15px 0;
+  font-weight:900;
+}
+
+.btn{
+  display:block;
+  width:100%;
+  padding:15px;
+  margin-top:10px;
+  border:none;
+  border-radius:14px;
+  font-weight:bold;
+  color:white;
+  cursor:pointer;
+}
+
+.si{background:#2a9d8f;}
+.no{background:#d90429;}
+
+/* RUTAS */
+.ruta{
+  display:none;
+  margin-top:10px;
+}
+
+.ruta.activa{
+  display:block;
+}
+
+.paso{
+  background:#ffe5d9;
+  padding:12px;
+  border-radius:12px;
+  margin-bottom:8px;
+  font-weight:700;
+}
+
+/* BARRA */
+.barra{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  display:flex;
+  gap:10px;
+  background:white;
+  padding:10px;
+}
+
+.barra a{
+  flex:1;
+  text-align:center;
+  padding:15px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.menu{background:#eee;}
+.llamar{background:#d90429;color:white;}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="banner">
+    <div class="label">PROTOCOLO</div>
+    <div class="titulo">Menores en el plantel fuera del horario escolar</div>
+  </div>
+</div>
+
+<div class="contenedor">
+
+  <!-- DESCRIPCIÓN -->
+  <div class="card">
+    <h2>Descripción</h2>
+    <ul>
+      <li>Dejar a un menor sin compañía lo expone a situaciones de riesgo.</li>
+      <li>Existen riesgos desde accidentes hasta situaciones de violencia.</li>
+      <li>Los padres deben asistir puntualmente por sus hijos.</li>
+      <li>Se deben evaluar peligros del trayecto y la edad del menor.</li>
+    </ul>
+  </div>
+
+  <!-- CONSIDERACIONES -->
+  <div class="card">
+    <h2>Consideraciones</h2>
+    <ul>
+      <li>Contar con teléfonos de contacto.</li>
+      <li>Conocer la situación familiar.</li>
+      <li>Acompañar a menores en su traslado.</li>
+      <li>No dejar solos a los menores.</li>
+    </ul>
+  </div>
+
+  <!-- DECISIÓN -->
+  <div class="decision">
+    ¿Se obtuvo respuesta de los contactos del menor?
+  </div>
+
+  <button class="btn si" onclick="mostrar('si')">SÍ</button>
+  <button class="btn no" onclick="mostrar('no')">NO</button>
+
+  <!-- RUTA SI -->
+  <div id="si" class="ruta">
+    <div class="card">
+      <h2>Ruta con respuesta</h2>
+
+      <div class="paso">Pedir llegada de familiar o adulto responsable</div>
+      <div class="paso">Mantener al menor dentro de la escuela</div>
+      <div class="paso">Concientizar a la familia sobre su responsabilidad</div>
+
+    </div>
+  </div>
+
+  <!-- RUTA NO -->
+  <div id="no" class="ruta">
+    <div class="card">
+      <h2>Ruta sin respuesta</h2>
+
+      <div class="paso">Resguardar al menor</div>
+      <div class="paso">Informar a autoridades educativas y seguridad escolar</div>
+      <div class="paso">Si pasa una hora, llamar al 911</div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="barra">
+  <a href="index.html" class="menu">☰ Menú</a>
+  <a href="tel:911" class="llamar">🚨 911</a>
+</div>
+
+<script>
+function mostrar(tipo){
+  document.getElementById("si").classList.remove("activa");
+  document.getElementById("no").classList.remove("activa");
+
+  document.getElementById(tipo).classList.add("activa");
+}
+</script>
+
+</body>
+</html>

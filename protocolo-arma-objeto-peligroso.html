@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Objeto peligroso</title>
+
+<style>
+body{
+  margin:0;
+  font-family:system-ui;
+  background:#eef6f7;
+  padding-bottom:90px;
+}
+
+/* HEADER */
+.header{
+  background:white;
+  padding:15px;
+  border-bottom:8px solid #ff8000;
+}
+
+.banner{
+  display:flex;
+  align-items:center;
+}
+
+.label{
+  background:#ff8000;
+  color:white;
+  font-size:1.6rem;
+  font-weight:900;
+  padding:18px;
+  border-radius:0 20px 20px 0;
+}
+
+.titulo{
+  padding-left:12px;
+  font-weight:900;
+  color:#007886;
+  font-size:1rem;
+}
+
+/* CONTENIDO */
+.contenedor{
+  padding:15px;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:15px;
+  margin-bottom:12px;
+  box-shadow:0 6px 15px rgba(0,0,0,.08);
+}
+
+.card h2{
+  color:#0a9396;
+}
+
+/* PASOS */
+.paso{
+  background:#0a9396;
+  color:white;
+  padding:13px;
+  border-radius:14px;
+  margin-bottom:8px;
+  font-weight:800;
+  text-align:center;
+}
+
+/* BARRA */
+.barra{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  display:flex;
+  gap:10px;
+  background:white;
+  padding:10px;
+}
+
+.barra a{
+  flex:1;
+  text-align:center;
+  padding:15px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.menu{background:#eee;}
+.llamar{background:#d90429;color:white;}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="banner">
+    <div class="label">PROTOCOLO</div>
+    <div class="titulo">
+      Presencia o lanzamiento intencional de arma de fuego, objetos explosivos o inusuales en el plantel
+    </div>
+  </div>
+</div>
+
+<div class="contenedor">
+
+  <!-- DESCRIPCIÓN -->
+  <div class="card">
+    <h2>Descripción</h2>
+    <p>
+      El fenómeno de la violencia se transforma día a día, es por ello que se pueden presentar situaciones inesperadas en el contexto escolar.
+    </p>
+    <p>
+      Una de ellas es la presencia de artículos peligrosos, como armas, artefactos explosivos o enervantes, que son arrojados en el plantel y sus alrededores por personas que desean deshacerse de ellos.
+    </p>
+    <p>
+      Por lo anterior, pueden encontrarse de manera fortuita objetos que podrían poner en peligro la integridad de la comunidad escolar al querer manipularlos.
+    </p>
+  </div>
+
+  <!-- CONSIDERACIONES -->
+  <div class="card">
+    <h2>Consideraciones</h2>
+    <ul>
+      <li>Retire de inmediato al alumnado a los salones más alejados del objeto.</li>
+      <li>No manipule el objeto.</li>
+      <li>Llame al 911 y a la Coordinación Estatal de Seguridad Escolar.</li>
+      <li>Espere indicaciones de las instancias de seguridad.</li>
+      <li>Evite el contacto con personas extrañas.</li>
+      <li>Mantenga la calma.</li>
+      <li>Evite que personal o alumnos se acerquen al área.</li>
+    </ul>
+  </div>
+
+  <!-- PROTOCOLO -->
+  <div class="card">
+    <h2>Protocolo</h2>
+
+    <div class="paso">AVISTAMIENTO DE OBJETO PELIGROSO</div>
+    <div class="paso">NO MANIPULAR OBJETO Y RESGUARDAR LA ZONA</div>
+    <div class="paso">ALEJAR A LA COMUNIDAD</div>
+    <div class="paso">LLAMAR AL 911 Y SEGURIDAD ESCOLAR</div>
+    <div class="paso">ARRIBO DE INSTANCIAS Y EVALUACIÓN</div>
+    <div class="paso">ESPERAR RETIRO DEL OBJETO</div>
+
+  </div>
+
+</div>
+
+<div class="barra">
+  <a href="index.html" class="menu">☰ Menú</a>
+  <a href="tel:911" class="llamar">🚨 911</a>
+</div>
+
+</body>
+</html>

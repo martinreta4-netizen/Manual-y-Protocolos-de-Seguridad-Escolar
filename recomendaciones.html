@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recomendaciones generales</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:#fff4e8;
+  color:#1f2937;
+  padding-bottom:90px;
+}
+
+.header{
+  background:white;
+  padding:15px;
+  border-bottom:8px solid #f6c49b;
+}
+
+.banner{
+  display:flex;
+  align-items:center;
+}
+
+.label{
+  background:#ff8000;
+  color:white;
+  font-size:1.45rem;
+  font-weight:1000;
+  padding:18px;
+  border-radius:0 20px 20px 0;
+}
+
+.titulo{
+  padding-left:14px;
+  font-weight:900;
+  color:#007886;
+  font-size:1.05rem;
+  line-height:1.1;
+}
+
+.contenedor{
+  padding:15px;
+  max-width:950px;
+  margin:auto;
+}
+
+.intro{
+  background:white;
+  border-radius:20px;
+  padding:15px;
+  margin-bottom:12px;
+  box-shadow:0 6px 16px rgba(0,0,0,.08);
+}
+
+.tabs{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+  margin-bottom:14px;
+}
+
+.tab-btn{
+  border:none;
+  border-radius:16px;
+  padding:15px;
+  font-weight:1000;
+  color:white;
+  font-size:.95rem;
+  cursor:pointer;
+  background:#ff8000;
+}
+
+.tab-btn.activo{
+  background:#007886;
+}
+
+.panel{
+  display:none;
+  background:white;
+  border-radius:20px;
+  padding:16px;
+  box-shadow:0 8px 22px rgba(0,0,0,.09);
+  margin-bottom:14px;
+}
+
+.panel.activo{
+  display:block;
+}
+
+.panel h2{
+  margin:0 0 10px;
+  color:#007886;
+}
+
+.panel h3{
+  color:#ff8000;
+  margin:14px 0 8px;
+}
+
+.panel p,
+.panel li{
+  font-size:.94rem;
+  line-height:1.55;
+}
+
+li{
+  margin-bottom:7px;
+}
+
+.bloque-alerta{
+  background:#fff1d6;
+  border-left:7px solid #ff8000;
+  padding:12px;
+  border-radius:14px;
+  margin:12px 0;
+  font-weight:800;
+}
+
+.barra{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  display:flex;
+  gap:10px;
+  background:white;
+  padding:10px;
+  box-shadow:0 -6px 20px rgba(0,0,0,.18);
+}
+
+.barra a{
+  flex:1;
+  text-align:center;
+  padding:15px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:1000;
+}
+
+.menu{
+  background:#eef6f7;
+  color:#007886;
+}
+
+.llamar{
+  background:#d90429;
+  color:white;
+}
+
+@media(min-width:760px){
+  .tabs{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="banner">
+    <div class="label">RECOMENDACIONES</div>
+    <div class="titulo">Servicio de transporte, familias y personal escolar</div>
+  </div>
+</header>
+
+<main class="contenedor">
+
+  <section class="intro">
+    <strong>Consulta rápida:</strong> selecciona el tipo de recomendación que necesitas revisar.
+  </section>
+
+  <div class="tabs">
+    <button class="tab-btn activo" onclick="mostrar('transporte',this)">🚌 Transporte escolar</button>
+    <button class="tab-btn" onclick="mostrar('familias',this)">👨‍👩‍👧 Familias</button>
+    <button class="tab-btn" onclick="mostrar('maestros',this)">🏫 Maestros y directivos</button>
+  </div>
+
+  <!-- TRANSPORTE -->
+  <section id="transporte" class="panel activo">
+    <h2>Servicio de transporte escolar</h2>
+
+    <p>El uso y contratación del servicio de transporte escolar no es responsabilidad de la escuela, sino un convenio entre un servicio privado y los padres y madres de familia o tutores/as. Por ello se dejan las siguientes recomendaciones para que sean de su conocimiento general.</p>
+
+    <ul>
+      <li>El directivo de la escuela debe contar con un registro de los transportes escolares que brindan servicio a la escuela. Dicho registro contendrá los datos del vehículo y del transportista, así como el número y los datos de los alumnos que viajan en cada transporte escolar.</li>
+      <li>El servicio deberá entregar un gafete al alumnado que prestan el servicio, con el nombre del alumno o alumna y de la persona encargada del servicio.</li>
+      <li>Los/Las conductores/as del transporte escolar deberán contar con 5 números de contacto en caso de emergencia.</li>
+      <li>Los transportes escolares deberán hacer el ascenso y/o descenso de alumnado en un lugar específico, que preferentemente esté ubicado en el interior del plantel o justo en la salida del mismo.</li>
+      <li>Cuando se acerque el autobús, el alumnado debe permanecer alejado, por lo menos dos metros de distancia y esperar a que el vehículo se detenga totalmente para subir.</li>
+      <li>Al momento de descender del transporte, el alumnado deberá seguir las indicaciones del personal encargado de dirigir el flujo vehicular.</li>
+      <li>El servicio deberá verificar con el pase de lista que sólo trasladen a los y las alumnos/as que viajan por ese medio, ya que saliendo del perímetro escolar, estarán bajo su responsabilidad.</li>
+      <li>Los y las alumnos y alumnas deberán usar el cinturón de seguridad durante todo el recorrido. El transportista avanzará solo cuando los pasajeros esten asegurados en su lugar.</li>
+      <li>Ambos padres respetarán los horarios acordados para evitar retrasos y excesos de velocidad.</li>
+      <li>El transportista deberá contar con un protocolo de emergencia en caso de accidente o falla mecánica, el cual deberá comunicárselo al director, docentes y padres de familia.</li>
+      <li>El vehículo a utilizar deberá portar el engomado del número de permiso asignado por el Instituto de Movilidad y Accesibilidad de Nuevo León en la parte superior del parabrisas frontal, en la parte superior izquierda de la ventanilla trasera y en el capacete.</li>
+      <li>El transporte portará una leyenda que indique el número de teléfono del prestador de servicio, para la atención de quejas y para contactar al Instituto de Movilidad y Accesibilidad de Nuevo León (2020-7333, 2020-7334 y 811- 030-9374).</li>
+    </ul>
+  </section>
+
+  <!-- FAMILIAS -->
+  <section id="familias" class="panel">
+    <h2>A los padres y madres de familia o tutores y tutoras en caso de una situación de emergencia</h2>
+
+    <h3>Si el padre de familia se encuentra en su casa</h3>
+    <ul>
+      <li>Confirme vía telefónica con la dirección de la escuela la situación de riesgo.</li>
+      <li>Si se confirma la situación de riesgo, contacte a otros padres y madres de familia, tutores y/o tutoras para seguir las indicaciones del protocolo de seguridad.</li>
+      <li>Informar a otros padres y madres de familia, tutores y/o tutoras de la situación evitará que se sature la línea telefónica de la escuela.</li>
+      <li>Llame de inmediato al 911 para avisar a las autoridades.</li>
+      <li>Permanezca en casa, trasladarse a la escuela para sacar al menor de la misma sólo pone en riesgo la seguridad de su familia.</li>
+      <li>Establezca un lapso de 30 minutos para seguir en contacto con la escuela, a fin de verificar la situación que prevalece.</li>
+      <li>Acudir a la escuela si las autoridades lo consideran seguro.</li>
+    </ul>
+
+    <h3>Si el padre y madre de familia, tutor y/o tutora se encuentra en los alrededores de la escuela</h3>
+    <ul>
+      <li>Dirígase a la entrada de la escuela y acatar los protocolos de seguridad.</li>
+      <li>Permanezca en el área que le designe el personal de la escuela.</li>
+      <li>Evite asomarse por las ventanas y puertas.</li>
+      <li>Evite sacar a los y las menores del plantel, hasta que lo indique la autoridad responsable del operativo.</li>
+      <li>Apoye a los y las docentes a mantener la calma de los y las menores.</li>
+    </ul>
+  </section>
+
+  <!-- MAESTROS -->
+  <section id="maestros" class="panel">
+    <h2>A maestros, maestras y directivos en caso de una situación de emergencia</h2>
+
+    <p>Para establecer un esquema que permita la solución de eventos extraordinarios en los planteles educativos e inmuebles administrativos, la Secretaría de Educación creo el Protocolo de Flujo de Información, Comunicación y Respuesta en situaciones emergentes.</p>
+
+    <p>Por esto se considera importante que todas las áreas pertenecientes a la Secretaría de Educación tengan conocimiento del presente documento.</p>
+
+    <div class="bloque-alerta">Recomendaciones generales de actuación</div>
+
+    <ul>
+      <li>Actue de manera inmediata durante evento emergente.</li>
+      <li>Sea objetivo respecto a los acontecimientos (no maximice el hecho, ni minimice el hecho, ni establezca supuestos en base a rumores).</li>
+      <li>Evite actuar por decisión unilateral si hay riesgos.</li>
+      <li>El director es el responsable de la información, pero tiene la facultad de nombrar a un vocero sustituto.</li>
+      <li>Reuna la mayor cantidad de datos sobre los hechos registrados:</li>
+      <li>Situación general.</li>
+      <li>De los participantes: Datos generales.</li>
+      <li>Del evento: Ubicación (Municipio, colonia, calle, número, entre calles).</li>
+      <li>Hora del incidente.</li>
+      <li>Evite la fuga de información a personas ajenas a la institución.</li>
+      <li>Abstengase de ventilar información en áreas comunes para resguardar la integridad de alumnos, alumnas o miembros del plantel.</li>
+      <li>Informe a los padres, madres de familia, tutores y/o tutoras.</li>
+      <li>Cuente con al menos tres números de contacto en la ficha evolutiva.</li>
+      <li>Siga las indicaciones de las autoridades de seguridad, protección civil y/o servicios de emergencias médicas.</li>
+      <li>El área responsable realizará una valoración objetiva del incidente. Si el caso lo amerita se comunicará con su superior jerárquico, quien acudirá manera inmediata al plantel.</li>
+      <li>Asimismo, la Dirección de Nivel correspondiente y la Coordinación Estatal de Seguridad Escolar acudirán al plantel junto con el área responsable.</li>
+      <li>El área de la Secretaría de Educación que le corresponda atender el caso deberá, establecer contacto con el plantel de manera inmediata.</li>
+      <li>Al momento de hacer contacto con la escuela se pedirá un teléfono alterno para establecer comunicación.</li>
+      <li>En todo momento se debe de actuar con discreción evitando hacer comentarios con terceros o personas ajenas.</li>
+      <li>Si alguien ajeno al plantel solicita la información al respecto, por ningún motivo se le permitirá el ingreso, ni se le darán datos (sólo a padres y madres de familia o tutores).</li>
+      <li>La Dirección de Comunicación y Prensa será la única responsable de autorizar y facilitar el flujo de información a los medios de comunicación.</li>
+      <li>Al terminar la intervención, se deberá realizar una ficha de acontecimientos que se entregará a la Dirección, Subsecretaría y Oficina de él o la titular de la Secretaría de Educación.</li>
+    </ul>
+  </section>
+
+</main>
+
+<nav class="barra">
+  <a href="index.html" class="menu">☰ Menú</a>
+  <a href="tel:911" class="llamar">🚨 911</a>
+</nav>
+
+<script>
+function mostrar(id,btn){
+  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("activo"));
+  document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("activo"));
+
+  document.getElementById(id).classList.add("activo");
+  btn.classList.add("activo");
+
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>

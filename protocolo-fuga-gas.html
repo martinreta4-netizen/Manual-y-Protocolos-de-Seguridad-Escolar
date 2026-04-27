@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fuga de gas o químico</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:system-ui;
+  background:#fff6d6;
+  padding-bottom:90px;
+}
+
+/* HEADER */
+.header{
+  background:white;
+  padding:15px;
+  border-bottom:8px solid #ffcc00;
+}
+
+.banner{
+  display:flex;
+  align-items:center;
+}
+
+.label{
+  background:#ff8000;
+  color:white;
+  font-size:1.6rem;
+  font-weight:900;
+  padding:18px;
+  border-radius:0 20px 20px 0;
+}
+
+.titulo{
+  padding-left:12px;
+  font-weight:900;
+  color:#007886;
+}
+
+/* CONTENIDO */
+.contenedor{
+  padding:15px;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:15px;
+  margin-bottom:12px;
+  box-shadow:0 6px 15px rgba(0,0,0,.08);
+}
+
+.card h2{
+  color:#d62828;
+}
+
+/* ALERTA */
+.alerta{
+  background:#fff3cd;
+  border-left:6px solid #ffcc00;
+  padding:12px;
+  border-radius:12px;
+  margin-bottom:10px;
+  font-weight:700;
+}
+
+/* PASOS */
+.paso{
+  background:#d62828;
+  color:white;
+  padding:14px;
+  border-radius:14px;
+  margin-bottom:8px;
+  font-weight:800;
+  text-align:center;
+  box-shadow:0 5px 12px rgba(0,0,0,.15);
+}
+
+/* BLOQUE DECISIÓN */
+.decision{
+  background:#f77f00;
+  color:white;
+  padding:14px;
+  border-radius:14px;
+  text-align:center;
+  font-weight:900;
+}
+
+/* BARRA */
+.barra{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  display:flex;
+  gap:10px;
+  background:white;
+  padding:10px;
+}
+
+.barra a{
+  flex:1;
+  text-align:center;
+  padding:15px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.menu{background:#eee;}
+.llamar{background:#d90429;color:white;}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="banner">
+    <div class="label">PROTOCOLO</div>
+    <div class="titulo">Fuga de gas u otro químico</div>
+  </div>
+</div>
+
+<div class="contenedor">
+
+  <!-- DESCRIPCIÓN -->
+  <div class="card">
+    <h2>Descripción</h2>
+    <p>
+      Cuando existe un suceso en el que se involucra gas natural, butano u otro químico en estado gaseoso, se deben extremar las medidas de precaución para evitar explosiones o intoxicaciones.
+    </p>
+    <p>
+      Es importante verificar instalaciones y conocer los riesgos en el entorno escolar.
+    </p>
+  </div>
+
+  <!-- CONSIDERACIONES -->
+  <div class="card">
+    <h2>Consideraciones</h2>
+    <ul>
+      <li>Identificar factores de riesgo potenciales.</li>
+      <li>Contar con rutas de evacuación.</li>
+      <li>Revisar instalaciones periódicamente.</li>
+      <li>Coordinar acciones con autoridades.</li>
+    </ul>
+  </div>
+
+  <!-- ALERTA -->
+  <div class="alerta">
+    ⚠️ No encender luces, fuego o dispositivos eléctricos ante una fuga de gas.
+  </div>
+
+  <!-- PROTOCOLO -->
+  <div class="card">
+    <h2>Protocolo</h2>
+
+    <div class="paso">FUGA DE GAS O SUSTANCIA QUÍMICA</div>
+    <div class="paso">DAR AVISO AL 911 Y A SEGURIDAD ESCOLAR</div>
+
+    <div class="decision">
+      CONTROL DE LA SITUACIÓN:<br>
+      EVACUACIÓN O REGRESO A CLASES SEGÚN INDICACIONES
+    </div>
+
+  </div>
+
+</div>
+
+<div class="barra">
+  <a href="index.html" class="menu">☰ Menú</a>
+  <a href="tel:911" class="llamar">🚨 911</a>
+</div>
+
+</body>
+</html>

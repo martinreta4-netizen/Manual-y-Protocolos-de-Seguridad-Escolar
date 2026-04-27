@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Incendio en la escuela</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:system-ui;
+  background:#fff3e6;
+  padding-bottom:90px;
+}
+
+.header{
+  background:white;
+  padding:15px;
+  border-bottom:8px solid #ff8000;
+}
+
+.banner{
+  display:flex;
+  align-items:center;
+}
+
+.label{
+  background:#ff8000;
+  color:white;
+  font-size:1.6rem;
+  font-weight:900;
+  padding:18px;
+  border-radius:0 20px 20px 0;
+}
+
+.titulo{
+  padding-left:12px;
+  font-weight:900;
+  color:#007886;
+}
+
+/* CONTENIDO */
+.contenedor{
+  padding:15px;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:15px;
+  margin-bottom:12px;
+  box-shadow:0 6px 15px rgba(0,0,0,.08);
+}
+
+.card h2{
+  color:#d62828;
+}
+
+/* PASOS BASE */
+.base{
+  background:#d62828;
+  color:white;
+  padding:14px;
+  border-radius:14px;
+  text-align:center;
+  font-weight:900;
+  margin-bottom:10px;
+}
+
+/* DECISION */
+.decision{
+  background:#f77f00;
+  color:white;
+  padding:14px;
+  border-radius:14px;
+  text-align:center;
+  font-weight:900;
+  margin-top:10px;
+}
+
+/* BOTONES */
+.opciones{
+  display:grid;
+  gap:10px;
+  margin-top:10px;
+}
+
+button{
+  border:none;
+  border-radius:14px;
+  padding:14px;
+  font-weight:900;
+  color:white;
+  cursor:pointer;
+}
+
+.si{background:#2a9d8f;}
+.no{background:#d90429;}
+
+/* RUTAS */
+.ruta{display:none;margin-top:10px;}
+.ruta.activa{display:block;}
+
+.paso{
+  background:white;
+  border-left:8px solid #d62828;
+  padding:12px;
+  border-radius:12px;
+  margin-bottom:8px;
+  font-weight:700;
+}
+
+/* BARRA */
+.barra{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  display:flex;
+  gap:10px;
+  background:white;
+  padding:10px;
+}
+
+.barra a{
+  flex:1;
+  text-align:center;
+  padding:15px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.menu{background:#eee;}
+.llamar{background:#d90429;color:white;}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="banner">
+    <div class="label">PROTOCOLO</div>
+    <div class="titulo">Incendio en la escuela</div>
+  </div>
+</div>
+
+<div class="contenedor">
+
+  <!-- DESCRIPCIÓN -->
+  <div class="card">
+    <h2>Descripción</h2>
+    <p>El fuego es una de las contingencias más peligrosas por el calor y gases tóxicos. Es importante conocer riesgos, rutas de evacuación y contar con brigadas capacitadas.</p>
+  </div>
+
+  <!-- CONSIDERACIONES -->
+  <div class="card">
+    <h2>Consideraciones</h2>
+    <ul>
+      <li>No almacenar combustible dentro de la escuela.</li>
+      <li>Revisar instalaciones eléctricas y de gas.</li>
+      <li>Contar con rutas de evacuación.</li>
+      <li>Evitar sobrecargas eléctricas.</li>
+      <li>Si la ropa se incendia: tirarse al suelo y rodar.</li>
+    </ul>
+  </div>
+
+  <!-- BASE -->
+  <div class="base">EN CASO DE INCENDIO</div>
+  <div class="base">GUARDAR LA CALMA</div>
+  <div class="base">REALIZAR EVALUACIÓN</div>
+
+  <!-- DECISION 1 -->
+  <div class="decision">¿ES UN INCENDIO FOCALIZADO?</div>
+
+  <div class="opciones">
+    <button class="si" onclick="mostrar('focal')">SÍ</button>
+    <button class="no" onclick="mostrar('general')">NO</button>
+  </div>
+
+  <!-- FOCAL -->
+  <div id="focal" class="ruta">
+    <div class="card">
+      <h2>Incendio focalizado</h2>
+
+      <div class="paso">CONTROLAR LA SITUACIÓN</div>
+
+      <div class="decision">¿SE CONTROLÓ?</div>
+
+      <div class="opciones">
+        <button class="si" onclick="mostrar2('controlado')">SÍ</button>
+        <button class="no" onclick="mostrar2('nocontrolado')">NO</button>
+      </div>
+
+      <div id="controlado" class="ruta">
+        <div class="paso">SIN RIESGOS</div>
+        <div class="paso">REGRESO A CLASES</div>
+        <div class="paso">SEGURIDAD ESCOLAR</div>
+      </div>
+
+      <div id="nocontrolado" class="ruta">
+        <div class="paso">AVISO AL 911</div>
+        <div class="paso">COMUNICACIÓN A PADRES</div>
+        <div class="paso">SEGURIDAD ESCOLAR</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- GENERAL -->
+  <div id="general" class="ruta">
+    <div class="card">
+      <h2>Incendio generalizado</h2>
+
+      <div class="paso">EVACUACIÓN INMEDIATA</div>
+      <div class="paso">AVISO AL 911</div>
+      <div class="paso">SEGURIDAD ESCOLAR</div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="barra">
+  <a href="index.html" class="menu">☰ Menú</a>
+  <a href="tel:911" class="llamar">🚨 911</a>
+</div>
+
+<script>
+function mostrar(tipo){
+  document.getElementById("focal").classList.remove("activa");
+  document.getElementById("general").classList.remove("activa");
+  document.getElementById(tipo).classList.add("activa");
+}
+
+function mostrar2(tipo){
+  document.getElementById("controlado").classList.remove("activa");
+  document.getElementById("nocontrolado").classList.remove("activa");
+  document.getElementById(tipo).classList.add("activa");
+}
+</script>
+
+</body>
+</html>

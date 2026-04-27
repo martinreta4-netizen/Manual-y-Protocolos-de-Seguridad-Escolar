@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teléfonos de emergencia</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:#fff0df;
+  color:#1f2937;
+  padding-bottom:90px;
+}
+
+.header{
+  background:linear-gradient(135deg,#ff8000,#ff9f1c);
+  color:white;
+  padding:22px 16px;
+  border-bottom-left-radius:28px;
+  border-bottom-right-radius:28px;
+  box-shadow:0 10px 25px rgba(0,0,0,.18);
+}
+
+.header h1{
+  margin:0;
+  font-size:1.75rem;
+  line-height:1.05;
+}
+
+.header p{
+  margin:8px 0 0;
+  font-size:.9rem;
+  opacity:.95;
+}
+
+.contenedor{
+  padding:15px;
+  max-width:900px;
+  margin:auto;
+}
+
+.buscador{
+  width:100%;
+  padding:15px;
+  border-radius:18px;
+  border:2px solid #ffd2a1;
+  font-size:1rem;
+  outline:none;
+  margin-bottom:14px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:14px;
+  box-shadow:0 6px 15px rgba(0,0,0,.08);
+  border:1px solid #ffe0bd;
+}
+
+.nombre{
+  font-weight:900;
+  color:#007886;
+  font-size:1rem;
+  margin-bottom:6px;
+}
+
+.numero{
+  font-weight:800;
+  color:#111;
+  margin-bottom:8px;
+}
+
+.acciones{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.acciones a{
+  flex:1;
+  min-width:110px;
+  text-align:center;
+  text-decoration:none;
+  border-radius:14px;
+  padding:11px;
+  font-weight:900;
+  font-size:.9rem;
+}
+
+.llamar{
+  background:#d90429;
+  color:white;
+}
+
+.correo{
+  background:#007886;
+  color:white;
+}
+
+.nota{
+  margin-top:16px;
+  background:white;
+  border-left:7px solid #ff8000;
+  padding:13px;
+  border-radius:14px;
+  font-size:.9rem;
+  box-shadow:0 5px 14px rgba(0,0,0,.08);
+}
+
+.barra{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  background:white;
+  display:flex;
+  gap:10px;
+  padding:10px;
+  box-shadow:0 -6px 20px rgba(0,0,0,.18);
+}
+
+.barra a{
+  flex:1;
+  text-align:center;
+  text-decoration:none;
+  border-radius:16px;
+  padding:15px 10px;
+  font-weight:1000;
+}
+
+.menu{
+  background:#eef6f7;
+  color:#007886;
+}
+
+.emergencia{
+  background:#d90429;
+  color:white;
+}
+
+@media(min-width:760px){
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <h1>Teléfonos de emergencia</h1>
+  <p>Directorio rápido para situaciones escolares emergentes.</p>
+</header>
+
+<main class="contenedor">
+
+  <input class="buscador" id="buscador" type="search" placeholder="Buscar teléfono..." oninput="filtrar()">
+
+  <section class="grid" id="lista">
+
+    <div class="card">
+      <div class="nombre">Alerta Temprana</div>
+      <div class="numero">81 2298-0689</div>
+      <div class="acciones"><a class="llamar" href="tel:8122980689">📞 Llamar</a></div>
+    </div>
+
+    <div class="card">
+      <div class="nombre">Atención de emergencias</div>
+      <div class="numero">911</div>
+      <div class="acciones"><a class="llamar" href="tel:911">🚨 Llamar 911</a></div>
+    </div>
+
+    <div class="card">
+      <div class="nombre">Bomberos Nuevo León</div>
+      <div class="numero">81 83420-055</div>
+      <div class="acciones"><a class="llamar" href="tel:8183420055">📞 Llamar</a></div>
+    </div>
+
+    <div class="card">
+      <div class="nombre">Coordinación Estatal de Seguridad Escolar</div>
+      <div class="numero">81 2020-5454 / 2020-5455 / 2020-5452</div>
+      <div class="acciones">
+        <a class="llamar" href="tel:8120205454">📞 5454</a>
+        <a class="llamar" href="tel:8120205455">📞 5455</a>
+        <a class="llamar" href="tel:8120205452">📞 5452</a>
+        <a class="correo" href="mailto:seguridad.escolar@uienl.edu.mx">✉️ Correo</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="nombre">Denuncia Anónima</div>
+      <div class="numero">089</div>
+      <div class="acciones"><a class="llamar" href="tel:089">📞 Llamar 089</a></div>
+    </div>
+
+    <div class="card">
+      <div class="nombre">DIF</div>
+      <div class="numero">075</div>
+      <div class="acciones"><a class="llamar" href="tel:075">📞 Llamar</a></div>
+    </div>
+
+    <div class="card">
+      <div class="nombre">DIF Capullos</div>
+      <div class="numero">81 2020-8500</div>
+      <div class="acciones"><a class="llamar" href="tel:8120208500">📞 Llamar</a></div>
+    </div>
+
+    <div class="card">
+      <div class="nombre">Dirección de Nivel Primaria</div>
+      <div class="numero">81 2020-5311 / 2020-5313</div>
+      <div class="acciones">
+        <a class="llamar" href="tel:8120205311">📞 5311</a>
+        <a class="llamar" href="tel:8120205313">📞 5313</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="nombre">Dirección de Nivel Primera Infancia</div>
+      <div class="numero">81 2020-5530 / 2020-5531</div>
+      <div class="acciones">
+        <a class="llamar" href="tel:8120205530">📞 5530</a>
+        <a class="llamar" href="tel:8120205531">📞 5531</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="nombre">Dirección de Nivel Secundaria</div>
+      <div class="numero">81 2020-5320</div>
+      <div class="acciones"><a class="llamar" href="tel:8120205320">📞 Llamar</a></div>
+    </div>
+
+    <div class="card">
+      <div class="nombre">Ejército Mexicano</div>
+      <div class="numero">1647-0040</div>
+      <div class="acciones">
+        <a class="llamar" href="tel:16470040">📞 Llamar</a>
+        <a class="correo" href="mailto:denuncia.7zm@mail.sedena.gob.mx">✉️ Correo</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="nombre">Informatel</div>
+      <div class="numero">070</div>
+      <div class="acciones"><a class="llamar" href="tel:070">📞 Llamar</a></div>
+    </div>
+
+    <div class="card">
+      <div class="nombre">Parques y Vida Silvestre</div>
+      <div class="numero">81 2033-1200</div>
+      <div class="acciones"><a class="llamar" href="tel:8120331200">📞 Llamar</a></div>
+    </div>
+
+    <div class="card">
+      <div class="nombre">Policía Federal</div>
+      <div class="numero">088</div>
+      <div class="acciones"><a class="llamar" href="tel:088">📞 Llamar</a></div>
+    </div>
+
+    <div class="card">
+      <div class="nombre">Procuraduría de la Defensa del Menor y la Familia</div>
+      <div class="numero">81 2020-8523 / 81 20202-8524</div>
+      <div class="acciones">
+        <a class="llamar" href="tel:8120208523">📞 8523</a>
+        <a class="llamar" href="tel:8120208524">📞 8524</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="nombre">Programa de Atención Psicosocial</div>
+      <div class="numero">81 2033-3728 / 81 2033-7333</div>
+      <div class="acciones">
+        <a class="llamar" href="tel:8120333728">📞 3728</a>
+        <a class="llamar" href="tel:8120337333">📞 7333</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="nombre">Protección Civil del Estado</div>
+      <div class="numero">81 8343-1116 / 81 8342-8555 / 81 1101-8844</div>
+      <div class="acciones">
+        <a class="llamar" href="tel:8183431116">📞 1116</a>
+        <a class="llamar" href="tel:8183428555">📞 8555</a>
+        <a class="llamar" href="tel:8111018844">📞 8844</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="nombre">Salud Mental</div>
+      <div class="numero">81 8345-4326 / 81 8130-7065</div>
+      <div class="acciones">
+        <a class="llamar" href="tel:8183454326">📞 4326</a>
+        <a class="llamar" href="tel:8181307065">📞 7065</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="nombre">Unidad especializada antisecuestros</div>
+      <div class="numero">81 2020-4361</div>
+      <div class="acciones"><a class="llamar" href="tel:8120204361">📞 Llamar</a></div>
+    </div>
+
+    <div class="card">
+      <div class="nombre">Unidades de Atención Psicopedagógica</div>
+      <div class="numero">81 8347-9432 / 81 2020-5593</div>
+      <div class="acciones">
+        <a class="llamar" href="tel:8183479432">📞 9432</a>
+        <a class="llamar" href="tel:8120205593">📞 5593</a>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="nota">
+    ⚠️ En una emergencia real, prioriza el 911 y sigue las indicaciones de la autoridad correspondiente.
+  </div>
+
+</main>
+
+<nav class="barra">
+  <a class="menu" href="index.html">☰ Menú</a>
+  <a class="emergencia" href="tel:911">🚨 911</a>
+</nav>
+
+<script>
+function filtrar(){
+  const texto = document.getElementById("buscador").value.toLowerCase();
+  const tarjetas = document.querySelectorAll(".card");
+
+  tarjetas.forEach(card=>{
+    const contenido = card.innerText.toLowerCase();
+    card.style.display = contenido.includes(texto) ? "block" : "none";
+  });
+}
+</script>
+
+</body>
+</html>
