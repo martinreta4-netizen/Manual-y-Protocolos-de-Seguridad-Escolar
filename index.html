@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Manual y Protocolos de Seguridad Escolar</title>
 
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ff8000">
   <style>
     *{box-sizing:border-box}
 
@@ -397,6 +399,14 @@
       });
     }
   </script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js")
+    .then(() => console.log("Service Worker registrado"))
+    .catch(error => console.log("Error:", error));
+}
+</script>
 
 </body>
 </html>
